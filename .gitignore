@@ -1,0 +1,7 @@
+*.exe
+*.pdb
+*.vcproj.* 
+*.cvsignore
+*.cvswrapper
+*.log
+*.txt

@@ -1,0 +1,14 @@
+WINDOWS USERS: 
+Be sure to set your PATH to [install_path]/q3map3/binaries where 'install_path' is the 
+git repository's root folder. Binaries contains all of the .dll files necessary for 
+GTKRadiant.exe and q3map3.exe to run. 
+
+*NIX USERS: 
+Follow the installation directions using scons. 
+
+
+****NOTE****
+I've renamed the STLport folder to STLportl as a quick way to compile without
+Visual Studio complaining about pre-existing functions.
+
+Rename the STLportl file back to STLport if you want to use it. 

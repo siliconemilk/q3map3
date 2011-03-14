@@ -1,0 +1,12 @@
+prefix=c:/devel/target/696a101b25d7b16ef879f68d4f8948b0
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Pango FT2
+Description: Freetype 2.0 font support for Pango
+Version: 1.14.10
+Requires: pango
+Libs: -L${libdir} -lpangoft2-1.0 
+Cflags: -I${includedir}/pango-1.0 -Ic:/opt/misc/include   -Ic:/opt/misc/include   -I/opt/freetype/bin/../include/freetype2 -I/opt/freetype/bin/../include
+

@@ -1,0 +1,528 @@
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+NNAAMMEE
+       mmhhaasshh -- HHaasshh LLiibbrraarryy
+
+VVEERRSSIIOONN
+       mhash 0.8.16
+
+SSYYNNOOPPSSIISS
+        #include "mhash.h"
+
+        IInnffoorrmmaattiivvee FFuunnccttiioonnss
+
+        size_t   mhash_count(void);
+        size_t   mhash_get_block_size(hashid type);
+        char    *mhash_get_hash_name(hashid type);
+        size_t   mhash_get_hash_pblock(hashid type);
+        hashid   mhash_get_mhash_algo( MHASH);
+
+        KKeeyy GGeenneerraattiioonn FFuunnccttiioonnss
+
+        int      mhash_keygen_ext(keygenid algorithm, KEYGEN algorithm_data,
+                       void* keyword, int keysize,
+                       unsigned char* password, int passwordlen);
+
+        IInniittiiaalliizziinngg FFuunnccttiioonnss
+
+        MHASH    mhash_init(hashid type);
+        MHASH    mhash_hmac_init(const hashid type, void *key, int keysize, int block);
+        MHASH    mhash_cp( MHASH);
+
+        UUppddaattee FFuunnccttiioonnss
+
+        int      mhash(MHASH thread, const void *plaintext, size_t size);
+
+        SSaavvee//RReessttoorree FFuunnccttiioonnss
+
+        int      mhash_save_state_mem(MHASH thread, void *mem, int* mem_size );
+        MHASH    mhash_restore_state_mem(void* mem);
+
+        FFiinnaalliizziinngg FFuunnccttiioonnss
+
+        void    mhash_deinit(MHASH thread, void *result);
+        void    *mhash_end(MHASH thread);
+        void    *mhash_end_m(MHASH thread, void* (*hash_malloc)(size_t));
+
+        void    *mhash_hmac_end(MHASH thread);
+        void    *mhash_hmac_end_m(MHASH thread, void* (*hash_malloc)(size_t));
+        int     mhash_hmac_deinit(MHASH thread, void *result);
+
+        AAvvaaiillaabbllee HHaasshheess
+
+       _C_R_C_3_2: The crc32 algorithm is used to compute checksums.
+       The two variants used in mhash are: MMHHAASSHH__CCRRCC3322 (like the
+       one used in ethernet) and MMHHAASSHH__CCRRCC3322BB (like the one used
+       in ZIP programs).
+
+
+
+mhash 0.8.16                2000/03/23                          1
+
+
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+       _A_D_L_E_R_3_2: The adler32 algorithm is used to compute
+       checksums. It is faster than CRC32 and it is considered to
+       be as reliable as CRC32. This algorithm is defined as
+       MMHHAASSHH__AADDLLEERR3322.
+
+       _M_D_5: The MD5 algorithm by Ron Rivest and RSA. In mhash
+       this algorithm is defined as MMHHAASSHH__MMDD55.
+
+       _M_D_4: The MD4 algorithm by Ron Rivest and RSA. This
+       algorithm is considered broken, so don't use it. In mhash
+       this algorithm is defined as MMHHAASSHH__MMDD44.
+
+       _S_H_A_1/_S_H_A_2_5_6: The SHA algorithm by US. NIST/NSA. This
+       algorithm is specified for use in the NIST's Digital
+       Signature Standard. In mhash these algorithm are defined
+       as MMHHAASSHH__SSHHAA11 and MMHHAASSHH__SSHHAA225566.
+
+       _H_A_V_A_L: HAVAL is a one-way hashing algorithm with variable
+       length of output.  HAVAL is a modification of MD5.
+       Defined in mhash as: MMHHAASSHH__HHAAVVAALL225566,, MMHHAASSHH__HHAAVVAALL119922,,
+       MMHHAASSHH__HHAAVVAALL116600,, MMHHAASSHH__HHAAVVAALL112288.
+
+       _R_I_P_E_M_D_1_6_0: RIPEMD-160 is a 160-bit cryptographic hash
+       function, designed by Hans Dobbertin, Antoon Bosselaers,
+       and Bart Preneel. It is intended to be used as a secure
+       replacement for the 128-bit hash functions MD4, MD5, and
+       RIPEMD. MD4 and MD5 were developed by Ron Rivest for RSA
+       Data Security, while RIPEMD was developed in the framework
+       of the EU project RIPE (RACE Integrity Primitives
+       Evaluation, 1988-1992).  In mhash this algorithm is
+       defined as MMHHAASSHH__RRIIPPEEMMDD116600.
+
+       _T_I_G_E_R: Tiger is a fast hash function, by Eli Biham and
+       Ross Anderson.  Tiger was designed to be very fast on
+       modern computers, and in particular on the state-of-the-
+       art 64-bit computers, while it is still not slower than
+       other suggested hash functions on 32-bit machines.  In
+       mhash this algorithm is defined as: MMHHAASSHH__TTIIGGEERR,,
+       MMHHAASSHH__TTIIGGEERR116600,, MMHHAASSHH__TTIIGGEERR112288.
+
+       _G_O_S_T: GOST algorithm is a russian standard and it uses the
+       GOST encryption algorithm to produce a 256 bit hash value.
+       This algorithm is specified for use in the Russian Digital
+       Signature Standard.  In mhash this algorithm is defined as
+       MMHHAASSHH__GGOOSSTT.
+
+        AAvvaaiillaabbllee KKeeyy GGeenneerraattiioonn aallggoorriitthhmmss
+
+       _K_E_Y_G_E_N___M_C_R_Y_P_T: The key generator used in mcrypt.
+
+       _K_E_Y_G_E_N___A_S_I_S: Just returns the password as binary key.
+
+       _K_E_Y_G_E_N___H_E_X: Just converts a hex key into a binary one.
+
+
+
+
+mhash 0.8.16                2000/03/23                          2
+
+
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+       _K_E_Y_G_E_N___P_K_D_E_S: The transformation used in Phil Karn's DES
+       encryption program.
+
+       _K_E_Y_G_E_N___S_2_K___S_I_M_P_L_E: The OpenPGP (rfc2440) Simple S2K.
+
+       _K_E_Y_G_E_N___S_2_K___S_A_L_T_E_D: The OpenPGP Salted S2K.
+
+       _K_E_Y_G_E_N___S_2_K___I_S_A_L_T_E_D: The OpenPGP Iterated Salted S2K.
+
+DDEESSCCRRIIPPTTIIOONN
+       The mmhhaasshh library provides an easy to use C interface for
+       several _h_a_s_h _a_l_g_o_r_i_t_h_m_s (also known as "one-way"
+       algorithms). These can be used to create checksums,
+       message digests and more. Currently, MD5, SHA1, GOST,
+       TIGER, RIPE-MD160, HAVAL and several other algorithms are
+       supported.  mmhhaasshh support _H_M_A_C _g_e_n_e_r_a_t_i_o_n (a mechanism for
+       message authentication using cryptographic hash functions,
+       and is described in rfc2104). HMAC can be used to create
+       message digests using a secret key, so that these message
+       digests cannot be regenerated (or replaced) by someone
+       else.  A key generation mechanism was added to mmhhaasshh since
+       _k_e_y _g_e_n_e_r_a_t_i_o_n algorithms usually involve hash algorithms.
+
+AAPPII FFUUNNCCTTIIOONNSS
+       We will describe the API of mmhhaasshh in detail now. The order
+       follows the one in the SYNOPSIS directly.
+
+       size_t mmhhaasshh__ccoouunntt(void);
+           This returns the "hashid" of the last available hash.
+           Hashes are numbered from 0 to "mhash_count()".
+
+       size_t mmhhaasshh__ggeett__bblloocckk__ssiizzee(hashid _t_y_p_e);
+           If _t_y_p_e exists, this returns the used blocksize of the
+           hash _t_y_p_e in bytes. Otherwise, it returns 0.
+
+       char *mmhhaasshh__ggeett__hhaasshh__nnaammee(hashid _t_y_p_e);
+           If _t_y_p_e exists, this returns the name of the hash
+           _t_y_p_e. Otherwise, a "NULL" pointer is returned. The
+           string is allocated with _m_a_l_l_o_c(3) seperately, so do
+           not forget to _f_r_e_e(3) it.
+
+       const char *mmhhaasshh__ggeett__hhaasshh__nnaammee__ssttaattiicc(hashid _t_y_p_e);
+           If _t_y_p_e exists, this returns the name of the hash
+           _t_y_p_e. Otherwise, a "NULL" pointer is returned.
+
+       size_t mmhhaasshh__ggeett__hhaasshh__ppbblloocckk(hashid _t_y_p_e);
+           It returns the block size that the algorithm operates.
+           This is used in mhash_hmac_init. If the return value
+           is 0 you shouldn't use that algorithm in HMAC.
+
+       hashid mmhhaasshh__ggeett__mmhhaasshh__aallggoo(MHASH _s_r_c);
+           Returns the algorithm used in the state of _s_r_c.
+
+
+
+
+
+mhash 0.8.16                2000/03/23                          3
+
+
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+       MHASH mmhhaasshh__iinniitt(hashid _t_y_p_e);
+           This setups a context to begin hashing using the
+           algorithm _t_y_p_e. It returns a descriptor to that
+           context which will result in leaking memory, if you do
+           not call _m_h_a_s_h___d_e_i_n_i_t(3) later. Returns "MHASH_FAILED"
+           on failure.
+
+       MHASH mmhhaasshh__hhmmaacc__iinniitt(const hashid _t_y_p_e, void *_k_e_y, int
+           _k_e_y_s_i_z_e, int _b_l_o_c_k);
+           This setups a context to begin hashing using the
+           algorithm type in HMAC mode.  _k_e_y should be a pointer
+           to the key and _k_e_y_s_i_z_e its len. The _b_l_o_c_k is the block
+           size (in bytes) that the algorithm operates. It should
+           be obtained by _m_h_a_s_h___g_e_t___h_a_s_h___p_b_l_o_c_k_(_). If its 0 it
+           defaults to 64.  After calling it you should use
+           _m_h_a_s_h_(_) to update the context.  It returns a
+           descriptor to that context which will result in
+           leaking memory, if you do not call
+           _m_h_a_s_h___h_m_a_c___d_e_i_n_i_t(3) later.  Returns "MHASH_FAILED" on
+           failure.
+
+       MHASH mmhhaasshh__ccpp(MHASH _s_r_c);
+           This setups a new context using the state of _s_r_c.
+
+       int mmhhaasshh(MHASH _t_h_r_e_a_d, const void *_p_l_a_i_n_t_e_x_t, size_t
+           _s_i_z_e);
+           This updates the context described by _t_h_r_e_a_d with
+           _p_l_a_i_n_t_e_x_t. _s_i_z_e is the length of _p_l_a_i_n_t_e_x_t which may
+           be binary data.
+
+       int mmhhaasshh__ssaavvee__ssttaattee__mmeemm( MHASH _t_h_r_e_a_d, void *_m_e_m, int*
+           _m_e_m___s_i_z_e);
+           Saves the state of a hashing algorithm such that it
+           can be restored at some later point in time using
+           mmhhaasshh__rreessttoorree__ssttaattee__mmeemm(). _m_e_m___s_i_z_e should contain the
+           size of the given _m_e_m pointer. If it is not enough to
+           hold the buffer the required value will be copied
+           there.
+
+       MHASH mmhhaasshh__rreessttoorree__ssttaattee__mmeemm(void* _m_e_m);
+           Restores the state of a hashing algorithm that was
+           saved using mmhhaasshh__ssaavvee__ssttaattee__mmeemm(). Use like
+           mmhhaasshh__iinniitt().
+
+       void *mmhhaasshh__eenndd(MHASH _t_h_r_e_a_d);
+           This frees all resources associated with _t_h_r_e_a_d and
+           returns the result of the whole hashing operation (the
+           ``_d_i_g_e_s_t'').
+
+       void mmhhaasshh__ddeeiinniitt(MHASH _t_h_r_e_a_d, void* digest);
+           This frees all resources associated with _t_h_r_e_a_d and
+           stores the result of the whole hashing operation in
+           memory pointed by _d_i_g_e_s_t. _d_i_g_e_s_t may be null.
+
+
+
+
+mhash 0.8.16                2000/03/23                          4
+
+
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+       void *mmhhaasshh__hhmmaacc__eenndd(MHASH _t_h_r_e_a_d);
+           This frees all resources associated with thread and
+           returns the result of the whole hashing operation (the
+           ``_m_a_c'').
+
+       int mmhhaasshh__hhmmaacc__ddeeiinniitt(MHASH _t_h_r_e_a_d, void* digest);
+           This frees all resources associated with _t_h_r_e_a_d and
+           stores the result of the whole hashing operation in
+           memory pointed by digest. Digest may be null. Returns
+           non-zero in case of an error.
+
+       void *mmhhaasshh__eenndd__mm(MHASH _t_h_r_e_a_d, void*
+           (*hash_malloc)(size_t));
+           This frees all resources associated with _t_h_r_e_a_d and
+           returns the result of the whole hashing operation (the
+           ``_d_i_g_e_s_t''). The result will be allocated by using the
+           _h_a_s_h___m_a_l_l_o_c_(_) function provided.
+
+       void *mmhhaasshh__hhmmaacc__eenndd(MHASH _t_h_r_e_a_d, void*
+           (*hash_malloc)(size_t));
+           This frees all resources associated with thread and
+           returns the result of the whole hashing operation (the
+           ``_m_a_c''). The result will be allocated by using the
+           _h_a_s_h___m_a_l_l_o_c_(_) function provided.
+
+KKEEYYGGEENN AAPPII FFUUNNCCTTIIOONNSS
+       We will now describe the Key Generation API of mmhhaasshh in
+       detail.
+
+       int mmhhaasshh__kkeeyyggeenn__eexxtt(keygenid _a_l_g_o_r_i_t_h_m, KEYGEN
+           _a_l_g_o_r_i_t_h_m___d_a_t_a, void* _k_e_y_w_o_r_d, int _k_e_y_s_i_z_e, unsigned
+           char* _p_a_s_s_w_o_r_d, int _p_a_s_s_w_o_r_d_l_e_n);
+           This function, generates a key from a password. The
+           password is read from _p_a_s_s_w_o_r_d and it's len should be
+           in _p_a_s_s_w_o_r_d_l_e_n.  The key generation algorithm is
+           specified in _a_l_g_o_r_i_t_h_m, and that algorithm may
+           (internally) use the KEYGEN structure. The KEYGEN
+           structure consists of:
+            typedef struct keygen {
+                   hashid          hash_algorithm[2];
+                   unsigned int    count;
+                   void*           salt;
+                   int             salt_size;
+            } KEYGEN;
+
+           The algorithm(s) specified in
+           _a_l_g_o_r_i_t_h_m___d_a_t_a_._h_a_s_h___a_l_g_o_r_i_t_h_m, should be hash
+           algorithms and may be used by the key generation
+           algorithm. Some key generation algorithms may use more
+           than one hash algorithms (view also
+           _m_h_a_s_h___k_e_y_g_e_n___u_s_e_s___h_a_s_h___a_l_g_o_r_i_t_h_m_(_)).  If it is
+           desirable (and supported by the algorithm, eg.
+           KEYGEN_S2K_SALTED) a salt may be specified in
+           _a_l_g_o_r_i_t_h_m___d_a_t_a_._s_a_l_t of size _a_l_g_o_r_i_t_h_m___d_a_t_a_._s_a_l_t___s_i_z_e
+
+
+
+mhash 0.8.16                2000/03/23                          5
+
+
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+           or may be NULL.
+
+           The algorithm may use the _a_l_g_o_r_i_t_h_m___d_a_t_a_._c_o_u_n_t
+           internally (eg. KEYGEN_S2K_ISALTED).  The generated
+           keyword is stored in _k_e_y_w_o_r_d, which should be (at
+           least) _k_e_y_s_i_z_e bytes long.  The generated keyword is a
+           binary one. Returns a negative number on failure.
+
+       int mmhhaasshh__kkeeyyggeenn__uusseess__ssaalltt( keygenid _a_l_g_o_r_i_t_h_m);
+           This function returns 1 if the specified key
+           generation algorithm needs a salt to be specified.
+
+       int mmhhaasshh__kkeeyyggeenn__uusseess__ccoouunntt( keygenid _a_l_g_o_r_i_t_h_m);
+           This function returns 1 if the specified key
+           generation algorithm needs the algorithm_data.count
+           field in _m_h_a_s_h___k_e_y_g_e_n___e_x_t_(_). The count field tells the
+           algorithm to hash repeatedly the password and to stop
+           when ccoouunntt bytes have been processed.
+
+       int mmhhaasshh__ggeett__kkeeyyggeenn__ssaalltt__ssiizzee( keygenid _a_l_g_o_r_i_t_h_m);
+           This function returns the size of the salt size, that
+           the specific _a_l_g_o_r_i_t_h_m will use. If it returns 0, then
+           there is no limitation in the size.
+
+       int mmhhaasshh__ggeett__kkeeyyggeenn__mmaaxx__kkeeyy__ssiizzee( keygenid _a_l_g_o_r_i_t_h_m);
+           This function returns the maximum size of the key,
+           that the key generation algorithm may produce.  If it
+           returns 0, then there is no limitation in the size.
+
+       int mmhhaasshh__kkeeyyggeenn__uusseess__hhaasshh__aallggoorriitthhmm( keygenid _a_l_g_o_r_i_t_h_m);
+           This function returns the number of the hash
+           algorithms the key generation algorithm will use. If
+           it is 0 then no hash algorithm is used by the key
+           generation algorithm. This is for the
+           _a_l_g_o_r_i_t_h_m___d_a_t_a_._h_a_s_h___a_l_g_o_r_i_t_h_m field in
+           _m_h_a_s_h___k_e_y_g_e_n___e_x_t_(_). If
+
+       size_t mmhhaasshh__kkeeyyggeenn__ccoouunntt(void);
+           This returns the "keygenid" of the last available key
+           generation algorithm.  Algorithms are numbered from 0
+           to "mhash_keygen_count()".
+
+       char *mmhhaasshh__ggeett__kkeeyyggeenn__nnaammee(keygenid _t_y_p_e);
+           If _t_y_p_e exists, this returns the name of the keygen
+           _t_y_p_e. Otherwise, a "NULL" pointer is returned. The
+           string is allocated with _m_a_l_l_o_c(3) seperately, so do
+           not forget to _f_r_e_e(3) it.
+
+       const char *mmhhaasshh__ggeett__kkeeyyggeenn__nnaammee__ssttaattiicc(keygenid _t_y_p_e);
+           If _t_y_p_e exists, this returns the name of the keygen
+           _t_y_p_e. Otherwise, a "NULL" pointer is returned.
+
+EEXXAAMMPPLLEE
+       Hashing STDIN until EOF.
+
+
+
+mhash 0.8.16                2000/03/23                          6
+
+
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+        #include <mhash.h>
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main(void)
+        {
+               int i;
+               MHASH td;
+               unsigned char buffer;
+               unsigned char hash[16]; /* enough size for MD5 */
+
+               td = mhash_init(MHASH_MD5);
+
+               if (td == MHASH_FAILED) exit(1);
+
+               while (fread(&buffer, 1, 1, stdin) == 1) {
+                       mhash(td, &buffer, 1);
+               }
+
+               mhash_deinit(td, hash);
+
+               printf("Hash:");
+               for (i = 0; i < mhash_get_block_size(MHASH_MD5); i++) {
+                       printf("%.2x", hash[i]);
+               }
+               printf("\n");
+
+               exit(0);
+        }
+
+
+EEXXAAMMPPLLEE
+       An example program using HMAC:
+
+        #include <mhash.h>
+        #include <stdio.h>
+
+        int main()
+        {
+
+               char password[] = "Jefe";
+               int keylen = 4;
+               char data[] = "what do ya want for nothing?";
+               int datalen = 28;
+               MHASH td;
+               unsigned char mac[16];
+               int j;
+
+               td = mhash_hmac_init(MHASH_MD5, password, keylen,
+                                   mhash_get_hash_pblock(MHASH_MD5));
+
+               mhash(td, data, datalen);
+               mhash_hmac_deinit(td, mac);
+
+
+
+
+mhash 0.8.16                2000/03/23                          7
+
+
+
+
+
+mhash(3)                  mhash library                  mhash(3)
+
+
+        /*
+         * The output should be 0x750c783e6ab0b503eaa86e310a5db738
+         * according to RFC 2104.
+         */
+
+               printf("0x");
+               for (j = 0; j < mhash_get_block_size(MHASH_MD5); j++) {
+                       printf("%.2x", mac[j]);
+               }
+               printf("\n");
+
+               exit(0);
+        }
+
+
+HHIISSTTOORRYY
+       This library was originally written by _N_i_k_o_s
+       _M_a_v_r_o_y_a_n_o_p_o_u_l_o_s <nmav@hellug.gr> who passed the project
+       over to _S_a_s_c_h_a _S_c_h_u_m_a_n_n <sascha@schumann.cx> in May 1999.
+       Sascha maintained it until March 2000.  The library is now
+       maintained by _N_i_k_o_s _M_a_v_r_o_y_a_n_o_p_o_u_l_o_s.
+
+BBUUGGSS
+       If you find any, please send a bug report (preferrably
+       together with a patch) to the maintainer with a detailed
+       description on how to reproduce the bug.
+
+AAUUTTHHOORRSS
+       Sascha Schumann <sascha@schumann.cx> Nikos Mavroyanopoulos
+       <nmav@hellug.gr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mhash 0.8.16                2000/03/23                          8
+
+

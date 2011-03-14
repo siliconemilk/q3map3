@@ -1,0 +1,15 @@
+prefix=c:/devel/target/0764bb2d4bfe5a4b1051fd4e83076cfa
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+glib_genmarshal=glib-genmarshal
+gobject_query=gobject-query
+glib_mkenums=glib-mkenums
+
+Name: GLib
+Description: C Utility Library
+Version: 2.12.9
+Libs: -L${libdir} -lglib-2.0 -lintl  -liconv
+Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include 
+

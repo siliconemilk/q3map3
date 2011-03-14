@@ -1,0 +1,11 @@
+
+prefix=c:/progra~1/LibPng
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${exec_prefix}/include
+
+Name: libpng12
+Description: Loads and saves PNG files
+Version: 1.2.8
+Libs: -L${libdir} -lpng12 -lz  -lgw32c -lwsock32 -lole32 -luuid
+Cflags: -I${includedir}/libpng12

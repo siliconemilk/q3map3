@@ -1,0 +1,151 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(lib/mhash.c)
+
+AC_CANONICAL_SYSTEM
+
+AM_INIT_AUTOMAKE(mhash, 0.8.18)
+
+MHASH_VERSION=$VERSION
+AC_SUBST(MHASH_VERSION)
+
+AM_CONFIG_HEADER(mhash_config.h)
+
+AM_MAINTAINER_MODE
+	
+dnl AC_PROG_MAKE_SET
+
+dnl sinclude(threads.m4)
+
+AC_ARG_WITH(CC,
+[  --with-CC               choose compiler],
+  if test "$withval" != "no" && test "$withval" != "yes" ; then
+    CC="$withval"
+  fi
+)
+
+AC_ARG_WITH(CFLAGS,
+[  --with-CFLAGS           set C compiler flags],
+  if test "$withval" != "no" && test "$withval" != "yes" ; then
+    CFLAGS="$withval"
+  fi
+)
+
+AC_ARG_WITH(CPPFLAGS,
+[  --with-CPPFLAGS         set C preprocessor flags],
+  if test "$withval" != "no" && test "$withval" != "yes" ; then
+    CPPFLAGS="$withval"
+  fi
+)
+
+AC_ARG_WITH(LDFLAGS,
+[  --with-LDFLAGS          set linker flags],
+  if test "$withval" != "no" && test "$withval" != "yes" ; then
+    LDFLAGS="$withval"
+  fi
+)
+
+AC_ARG_ENABLE(md5,
+[  --disable-md5           disable the MD5 algorithm],
+, 
+AC_DEFINE(ENABLE_MD5))
+
+AC_ARG_ENABLE(sha1,
+[  --disable-sha1          disable the SHA1 algorithm],
+, 
+AC_DEFINE(ENABLE_SHA1))
+
+AC_ARG_ENABLE(md4,
+[  --disable-md4           disable the MD4 algorithm],
+, 
+AC_DEFINE(ENABLE_MD4))
+
+AC_ARG_ENABLE(tiger,
+[  --disable-tiger         disable the TIGER algorithm],
+, 
+AC_DEFINE(ENABLE_TIGER))
+
+AC_ARG_ENABLE(haval,
+[  --disable-haval         disable the HAVAL algorithm],
+, 
+AC_DEFINE(ENABLE_HAVAL))
+
+AC_ARG_ENABLE(crc32,
+[  --disable-crc32         disable the CRC32 algorithm],
+, 
+AC_DEFINE(ENABLE_CRC32))
+
+AC_ARG_ENABLE(adler32,
+[  --disable-adler32       disable the ADLER32 algorithm],
+, 
+AC_DEFINE(ENABLE_ADLER32))
+
+AC_ARG_ENABLE(ripemd,
+[  --disable-ripemd        disable the RIPEMD128/160/256/320 algorithms],
+, 
+AC_DEFINE(ENABLE_RIPEMD))
+
+AC_ARG_ENABLE(gost,
+[  --disable-gost          disable the GOST algorithm],
+, 
+AC_DEFINE(ENABLE_GOST))
+
+AC_ARG_ENABLE(sha256-sha224,
+[  --disable-sha256-sha224 disable the SHA256 and SHA224 algorithms],
+, 
+AC_DEFINE(ENABLE_SHA256_SHA224))
+
+AC_ARG_ENABLE(sha512-sha384,
+[  --disable-sha512-sha384 disable the SHA512 and SHA384 algorithms],
+, 
+AC_DEFINE(ENABLE_SHA512_SHA384))
+
+AC_ARG_ENABLE(whirlpool,
+[  --disable-whirlpool     disable the WHIRLPOOL algorithm],
+, 
+AC_DEFINE(ENABLE_WHIRLPOOL))
+
+
+
+AC_PROG_CC
+
+case "${target}" in
+    *-cygwin*)
+	AC_DEFINE(WIN32)
+	AC_DEFINE(WIN32_DLOPEN)
+	if test $ac_cv_prog_gcc = yes; then
+	  CFLAGS="${CFLAGS} -mno-cygwin"
+	fi
+        ;;
+esac
+
+
+dnl Checks for programs.
+AC_PROG_INSTALL
+AC_PROG_LN_S
+
+dnl if test $ac_cv_prog_gcc = yes; then
+dnl  CFLAGS="${CFLAGS} --fast-math -Wall -Wpointer-arith -pedantic"
+dnl fi
+
+AC_HEADER_STDC
+AC_CHECK_HEADERS(sys/stat.h sys/types.h fcntl.h signal.h unistd.h utime.h)
+AC_CHECK_FUNCS(bzero signal sigaction memset fcntl fsync \
+lstat stat umask utime memmove bcopy)
+
+AC_TYPE_SIZE_T
+
+dnl Checks for libraries.
+AC_CHECK_SIZEOF(unsigned long long int, 8)
+AC_CHECK_SIZEOF(unsigned long int, 4)
+AC_CHECK_SIZEOF(unsigned int, 4)
+AC_CHECK_SIZEOF(unsigned short int, 2)
+AC_CHECK_SIZEOF(unsigned char, 1)
+
+AC_C_BIGENDIAN
+
+AC_DISABLE_STATIC
+AC_LIBTOOL_WIN32_DLL
+AM_PROG_LIBTOOL
+AM_SET_LIBTOOL_VARIABLE([--silent])
+
+AC_OUTPUT([Makefile mhash.spec doc/Makefile src/Makefile lib/Makefile])

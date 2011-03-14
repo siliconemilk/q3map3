@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>mhash library</title>
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+<!--
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#version">VERSION</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#api_functions">API FUNCTIONS</a></li>
+	<li><a href="#keygen_api_functions">KEYGEN API FUNCTIONS</a></li>
+	<li><a href="#example">EXAMPLE</a></li>
+	<li><a href="#example">EXAMPLE</a></li>
+	<li><a href="#history">HISTORY</a></li>
+	<li><a href="#bugs">BUGS</a></li>
+	<li><a href="#authors">AUTHORS</a></li>
+</ul>
+-->
+<!-- INDEX END -->
+
+<p>
+</p>
+<hr />
+<h1><a name="name">NAME</a></h1>
+<p><strong>mhash - Hash Library</strong></p>
+<p>
+</p>
+<hr />
+<h1><a name="version">VERSION</a></h1>
+<p>mhash 0.8.17</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<pre>
+ #include &quot;mhash.h&quot;</pre>
+<p><strong> Informative Functions </strong></p>
+<pre>
+ size_t   mhash_count(void);
+ size_t   mhash_get_block_size(hashid type);
+ char    *mhash_get_hash_name(hashid type);
+ size_t   mhash_get_hash_pblock(hashid type);
+ hashid   mhash_get_mhash_algo( MHASH);</pre>
+<p><strong> Key Generation Functions </strong></p>
+<pre>
+ int      mhash_keygen_ext(keygenid algorithm, KEYGEN algorithm_data, 
+                void* keyword, int keysize,
+                unsigned char* password, int passwordlen);</pre>
+<p><strong> Initializing Functions </strong></p>
+<pre>
+ MHASH    mhash_init(hashid type);
+ MHASH    mhash_hmac_init(const hashid type, void *key, int keysize, int block);
+ MHASH    mhash_cp( MHASH);</pre>
+<p><strong> Update Functions </strong></p>
+<pre>
+ int      mhash(MHASH thread, const void *plaintext, size_t size);</pre>
+<p><strong> Save/Restore Functions </strong></p>
+<pre>
+ int      mhash_save_state_mem(MHASH thread, void *mem, int* mem_size );
+ MHASH    mhash_restore_state_mem(void* mem);</pre>
+<p><strong> Finalizing Functions </strong></p>
+<pre>
+ void    mhash_deinit(MHASH thread, void *result);
+ void    *mhash_end(MHASH thread);
+ void    *mhash_end_m(MHASH thread, void* (*hash_malloc)(size_t));</pre>
+<pre>
+ void    *mhash_hmac_end(MHASH thread);
+ void    *mhash_hmac_end_m(MHASH thread, void* (*hash_malloc)(size_t));
+ int     mhash_hmac_deinit(MHASH thread, void *result);</pre>
+<p><strong> Available Hashes </strong></p>
+<p><em>CRC32</em>:
+The crc32 algorithm is used to compute checksums. The two variants used
+in mhash are: <strong>MHASH_CRC32</strong> (like the one used in ethernet) and <strong>MHASH_CRC32B</strong>
+(like the one used in ZIP programs).</p>
+<p><em>ADLER32</em>:
+The adler32 algorithm is used to compute checksums. It is faster than
+CRC32 and it is considered to be as reliable as CRC32. This algorithm
+is defined as <strong>MHASH_ADLER32</strong>.</p>
+<p><em>MD5</em>: The MD5 algorithm by Ron Rivest and RSA. In mhash this algorithm is defined
+as <strong>MHASH_MD5</strong>.</p>
+<p><em>MD4</em>: The MD4 algorithm by Ron Rivest and RSA. This algorithm is
+considered broken, so don't use it. In mhash this algorithm is defined
+as <strong>MHASH_MD4</strong>.</p>
+<p><em>SHA1</em>/<em>SHA256</em>: The SHA algorithm by US. NIST/NSA. This algorithm is specified
+for use in the NIST's Digital Signature Standard. In mhash these algorithm
+are defined as <strong>MHASH_SHA1</strong> and <strong>MHASH_SHA256</strong>.</p>
+<p><em>HAVAL</em>:
+HAVAL is a one-way hashing algorithm with variable length of output.
+HAVAL is a modification of MD5. 
+Defined in mhash as: <strong>MHASH_HAVAL256, MHASH_HAVAL192, MHASH_HAVAL160, MHASH_HAVAL128</strong>.</p>
+<p><em>RIPEMD160</em>: 
+RIPEMD-160 is a 160-bit cryptographic hash function, designed by Hans Dobbertin, Antoon Bosselaers, and Bart Preneel. It is intended to be used as a secure replacement
+for the 128-bit hash functions MD4, MD5, and RIPEMD. MD4 and MD5 were developed by Ron Rivest for RSA Data Security, while RIPEMD was developed in the
+framework of the EU project RIPE (RACE Integrity Primitives Evaluation, 1988-1992).
+In mhash this algorithm is defined as <strong>MHASH_RIPEMD160</strong>.</p>
+<p><em>TIGER</em>: Tiger is a fast hash function, by Eli Biham and Ross Anderson.
+Tiger was designed to be very fast on modern computers, and in particular on the state-of-the-art 64-bit computers,
+while it is still not slower than other suggested hash functions on 32-bit machines. 
+In mhash this algorithm is defined as: <strong>MHASH_TIGER, MHASH_TIGER160, MHASH_TIGER128</strong>.</p>
+<p><em>GOST</em>: GOST algorithm is a russian standard and it uses the
+GOST encryption algorithm to produce a 256 bit hash value. This algorithm
+is specified for use in the Russian Digital Signature Standard.
+In mhash this algorithm is defined as <strong>MHASH_GOST</strong>.</p>
+<p><strong> Available Key Generation algorithms </strong></p>
+<p><em>KEYGEN_MCRYPT</em>: The key generator used in mcrypt.</p>
+<p><em>KEYGEN_ASIS</em>: Just returns the password as binary key.</p>
+<p><em>KEYGEN_HEX</em>: Just converts a hex key into a binary one.</p>
+<p><em>KEYGEN_PKDES</em>: The transformation used in Phil Karn's DES encryption program.</p>
+<p><em>KEYGEN_S2K_SIMPLE</em>: The OpenPGP (rfc2440) Simple S2K.</p>
+<p><em>KEYGEN_S2K_SALTED</em>: The OpenPGP Salted S2K.</p>
+<p><em>KEYGEN_S2K_ISALTED</em>: The OpenPGP Iterated Salted S2K.</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>The <strong>mhash</strong> library provides an easy to use C interface for several <em>hash
+algorithms</em> (also known as ``one-way'' algorithms). These can be used to
+create checksums, message digests and more. Currently, MD5, SHA1, GOST, TIGER,
+RIPE-MD160, HAVAL and several other algorithms are supported.
+<strong>mhash</strong> support <em>HMAC generation</em>
+(a mechanism for message authentication using cryptographic hash
+functions, and is described in rfc2104). HMAC can be used to create
+message digests using a secret key, so that these message digests cannot
+be regenerated (or replaced) by someone else.
+A key generation mechanism was added to <strong>mhash</strong> since <em>key generation</em>
+algorithms usually involve hash algorithms.</p>
+<p>
+</p>
+<hr />
+<h1><a name="api_functions">API FUNCTIONS</a></h1>
+<p>We will describe the API of <strong>mhash</strong> in detail now. The order follows
+the one in the SYNOPSIS directly.</p>
+<dl>
+<dt><strong><a name="item_mhash_count">size_t <strong>mhash_count</strong>(void);</a></strong><br />
+</dt>
+<dd>
+This returns the <code>hashid</code> of the last available hash. Hashes are numbered from
+0 to <a href="#item_mhash_count"><code>mhash_count()</code></a>.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_block_size">size_t <strong>mhash_get_block_size</strong>(hashid <em>type</em>);</a></strong><br />
+</dt>
+<dd>
+If <em>type</em> exists, this returns the used blocksize of the hash <em>type</em>
+in bytes. Otherwise, it returns 0.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_hash_name">char *<strong>mhash_get_hash_name</strong>(hashid <em>type</em>);</a></strong><br />
+</dt>
+<dd>
+If <em>type</em> exists, this returns the name of the hash <em>type</em>. Otherwise, a
+<code>NULL</code> pointer is returned. The string is allocated with <code>malloc(3)</code> seperately,
+so do not forget to <code>free(3)</code> it.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_hash_name_static">const char *<strong>mhash_get_hash_name_static</strong>(hashid <em>type</em>);</a></strong><br />
+</dt>
+<dd>
+If <em>type</em> exists, this returns the name of the hash <em>type</em>. Otherwise, a
+<code>NULL</code> pointer is returned.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_hash_pblock">size_t <strong>mhash_get_hash_pblock</strong>(hashid <em>type</em>);</a></strong><br />
+</dt>
+<dd>
+It returns the block size that the algorithm operates. This is used
+in mhash_hmac_init. If the return value is 0 you shouldn't use that
+algorithm in HMAC.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_mhash_algo">hashid <strong>mhash_get_mhash_algo</strong>(MHASH <em>src</em>);</a></strong><br />
+</dt>
+<dd>
+Returns the algorithm used in the state of <em>src</em>.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_init">MHASH <strong>mhash_init</strong>(hashid <em>type</em>);</a></strong><br />
+</dt>
+<dd>
+This setups a context to begin hashing using the algorithm <em>type</em>. It returns
+a descriptor to that context which will result in leaking memory, if you do not
+call <a href="#item_mhash_deinit"><code>mhash_deinit(3)</code></a> later. Returns <code>MHASH_FAILED</code> on failure.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_hmac_init">MHASH <strong>mhash_hmac_init</strong>(const hashid <em>type</em>, void *<em>key</em>, int <em>keysize</em>, int <em>block</em>);</a></strong><br />
+</dt>
+<dd>
+This setups a context to begin hashing using the algorithm type in HMAC mode.
+<em>key</em> should be a pointer to the
+key and <em>keysize</em> its len. The <em>block</em> is the block size (in bytes) that the algorithm
+operates. It should be obtained by mhash_get_hash_pblock(). If its 0 it defaults to 64.
+After calling it you should use <a href="#item_mhash"><code>mhash()</code></a> to update the context.
+It returns a descriptor to that context which will result in leaking memory,
+if you do not call <a href="#item_mhash_hmac_deinit"><code>mhash_hmac_deinit(3)</code></a> later.
+Returns <code>MHASH_FAILED</code> on failure.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_cp">MHASH <strong>mhash_cp</strong>(MHASH <em>src</em>);</a></strong><br />
+</dt>
+<dd>
+This setups a new context using the state of <em>src</em>.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash">int <strong>mhash</strong>(MHASH <em>thread</em>, const void *<em>plaintext</em>, size_t <em>size</em>);</a></strong><br />
+</dt>
+<dd>
+This updates the context described by <em>thread</em> with <em>plaintext</em>. <em>size</em> is
+the length of <em>plaintext</em> which may be binary data.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_save_state_mem">int <strong>mhash_save_state_mem</strong>( MHASH <em>thread</em>, void *<em>mem</em>, int* <em>mem_size</em>);</a></strong><br />
+</dt>
+<dd>
+Saves the state of a hashing algorithm such that it can be restored at 
+some later point in time using <strong>mhash_restore_state_mem</strong>(). <em>mem_size</em> should 
+contain the size of the given <em>mem</em> pointer. If it is not enough to hold
+the buffer the required value will be copied there.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_restore_state_mem">MHASH <strong>mhash_restore_state_mem</strong>(void* <em>mem</em>);</a></strong><br />
+</dt>
+<dd>
+Restores the state of a hashing algorithm that was saved using 
+<strong>mhash_save_state_mem</strong>(). Use like <strong>mhash_init</strong>().
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_end">void *<strong>mhash_end</strong>(MHASH <em>thread</em>);</a></strong><br />
+</dt>
+<dd>
+This frees all resources associated with <em>thread</em> and returns the result of
+the whole hashing operation (the ``<em>digest</em>'').
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_deinit">void <strong>mhash_deinit</strong>(MHASH <em>thread</em>, void* digest);</a></strong><br />
+</dt>
+<dd>
+This frees all resources associated with <em>thread</em> and stores the result of
+the whole hashing operation in memory pointed by <em>digest</em>. <em>digest</em>
+may be null.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_hmac_end">void *<strong>mhash_hmac_end</strong>(MHASH <em>thread</em>);</a></strong><br />
+</dt>
+<dd>
+This frees all resources associated with thread and returns the result of the
+whole hashing operation (the ``<em>mac</em>'').
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_hmac_deinit">int <strong>mhash_hmac_deinit</strong>(MHASH <em>thread</em>, void* digest);</a></strong><br />
+</dt>
+<dd>
+This frees all resources associated with <em>thread</em> and stores the result of
+the whole hashing operation in memory pointed by digest. Digest may be
+null. Returns non-zero in case of an error.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_end_m">void *<strong>mhash_end_m</strong>(MHASH <em>thread</em>, void* (*hash_malloc)(size_t));</a></strong><br />
+</dt>
+<dd>
+This frees all resources associated with <em>thread</em> and returns the result of
+the whole hashing operation (the ``<em>digest</em>''). The result will be allocated
+by using the <code>hash_malloc()</code> function provided.
+</dd>
+<p></p>
+<dt><strong>void *<strong>mhash_hmac_end</strong>(MHASH <em>thread</em>, void* (*hash_malloc)(size_t));</strong><br />
+</dt>
+<dd>
+This frees all resources associated with thread and returns the result of the
+whole hashing operation (the ``<em>mac</em>''). The result will be allocated
+by using the <code>hash_malloc()</code> function provided.
+</dd>
+<p></p></dl>
+<p>
+</p>
+<hr />
+<h1><a name="keygen_api_functions">KEYGEN API FUNCTIONS</a></h1>
+<p>We will now describe the Key Generation API of <strong>mhash</strong> in detail.</p>
+<dl>
+<dt><strong><a name="item_mhash_keygen_ext">int <strong>mhash_keygen_ext</strong>(keygenid <em>algorithm</em>, KEYGEN <em>algorithm_data</em>, void* <em>keyword</em>, int <em>keysize</em>, unsigned char* <em>password</em>, int <em>passwordlen</em>);</a></strong><br />
+</dt>
+<dd>
+This function, generates a key from a password. The password is read from
+<em>password</em> and it's len should be in <em>passwordlen</em>. 
+The key generation algorithm is specified in <em>algorithm</em>, and that algorithm may (internally) 
+use the KEYGEN structure. The KEYGEN structure consists of:
+ typedef struct keygen {
+        hashid          hash_algorithm[2];
+        unsigned int    count;
+        void*           salt;
+        int             salt_size;
+ } KEYGEN;
+</dd>
+<dd>
+<p>The <code>algorithm(s)</code> specified in <em>algorithm_data.hash_algorithm</em>, should be hash 
+algorithms and may be used by the key generation algorithm. Some key generation algorithms
+may use more than one hash algorithms (view also mhash_keygen_uses_hash_algorithm()).
+If it is desirable (and supported by the algorithm, eg. KEYGEN_S2K_SALTED) 
+a salt may be specified in <em>algorithm_data.salt</em> of size <em>algorithm_data.salt_size</em>
+or may be NULL.</p>
+</dd>
+<dd>
+<p>The algorithm may use the <em>algorithm_data.count</em> internally (eg. KEYGEN_S2K_ISALTED).
+The generated keyword is stored in <em>keyword</em>, which should be (at least) <em>keysize</em> bytes long.
+The generated keyword is a binary one. Returns a negative number on failure.</p>
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_keygen_uses_salt">int <strong>mhash_keygen_uses_salt</strong>( keygenid <em>algorithm</em>);</a></strong><br />
+</dt>
+<dd>
+This function returns 1 if the specified key generation algorithm needs
+a salt to be specified.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_keygen_uses_count">int <strong>mhash_keygen_uses_count</strong>( keygenid <em>algorithm</em>);</a></strong><br />
+</dt>
+<dd>
+This function returns 1 if the specified key generation algorithm needs
+the algorithm_data.count field in mhash_keygen_ext(). The count field tells the algorithm
+to hash repeatedly the password and to stop when <strong>count</strong> bytes have
+been processed.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_keygen_salt_size">int <strong>mhash_get_keygen_salt_size</strong>( keygenid <em>algorithm</em>);</a></strong><br />
+</dt>
+<dd>
+This function returns the size of the salt size, that the specific
+<em>algorithm</em> will use. If it returns 0, then there is no limitation in
+the size.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_keygen_max_key_size">int <strong>mhash_get_keygen_max_key_size</strong>( keygenid <em>algorithm</em>);</a></strong><br />
+</dt>
+<dd>
+This function returns the maximum size of the key, that the key generation 
+algorithm may produce.
+If it returns 0, then there is no limitation in the size.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_keygen_uses_hash_algorithm">int <strong>mhash_keygen_uses_hash_algorithm</strong>( keygenid <em>algorithm</em>);</a></strong><br />
+</dt>
+<dd>
+This function returns the number of the hash algorithms the key generation
+algorithm will use. If it is 0 then no hash algorithm is used by the
+key generation algorithm. This is for the <em>algorithm_data.hash_algorithm</em> field in
+mhash_keygen_ext(). If
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_keygen_count">size_t <strong>mhash_keygen_count</strong>(void);</a></strong><br />
+</dt>
+<dd>
+This returns the <code>keygenid</code> of the last available key generation algorithm.
+Algorithms are numbered from 0 to <a href="#item_mhash_keygen_count"><code>mhash_keygen_count()</code></a>.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_keygen_name">char *<strong>mhash_get_keygen_name</strong>(keygenid <em>type</em>);</a></strong><br />
+</dt>
+<dd>
+If <em>type</em> exists, this returns the name of the keygen <em>type</em>. Otherwise, a
+<code>NULL</code> pointer is returned. The string is allocated with <code>malloc(3)</code> seperately,
+so do not forget to <code>free(3)</code> it.
+</dd>
+<p></p>
+<dt><strong><a name="item_mhash_get_keygen_name_static">const char *<strong>mhash_get_keygen_name_static</strong>(keygenid <em>type</em>);</a></strong><br />
+</dt>
+<dd>
+If <em>type</em> exists, this returns the name of the keygen <em>type</em>. Otherwise, a
+<code>NULL</code> pointer is returned.
+</dd>
+<p></p></dl>
+<p>
+</p>
+<hr />
+<h1><a name="example">EXAMPLE</a></h1>
+<p>Hashing STDIN until EOF.</p>
+<pre>
+ #include &lt;mhash.h&gt;
+ #include &lt;stdio.h&gt;
+ #include &lt;stdlib.h&gt;</pre>
+<pre>
+ int main(void) 
+ {
+        int i;
+        MHASH td;
+        unsigned char buffer;
+        unsigned char hash[16]; /* enough size for MD5 */</pre>
+<pre>
+        td = mhash_init(MHASH_MD5);</pre>
+<pre>
+        if (td == MHASH_FAILED) exit(1);</pre>
+<pre>
+        while (fread(&amp;buffer, 1, 1, stdin) == 1) {
+                mhash(td, &amp;buffer, 1);
+        }</pre>
+<pre>
+        mhash_deinit(td, hash);</pre>
+<pre>
+        printf(&quot;Hash:&quot;);
+        for (i = 0; i &lt; mhash_get_block_size(MHASH_MD5); i++) {
+                printf(&quot;%.2x&quot;, hash[i]);
+        }
+        printf(&quot;\n&quot;);</pre>
+<pre>
+        exit(0);
+ }</pre>
+<p>
+</p>
+<hr />
+<h1><a name="example">EXAMPLE</a></h1>
+<p>An example program using HMAC:</p>
+<pre>
+ #include &lt;mhash.h&gt;
+ #include &lt;stdio.h&gt;</pre>
+<pre>
+ int main()
+ {</pre>
+<pre>
+        char password[] = &quot;Jefe&quot;;
+        int keylen = 4;
+        char data[] = &quot;what do ya want for nothing?&quot;;
+        int datalen = 28;
+        MHASH td;
+        unsigned char mac[16];
+        int j;
+ 
+        td = mhash_hmac_init(MHASH_MD5, password, keylen,
+                            mhash_get_hash_pblock(MHASH_MD5));</pre>
+<pre>
+        mhash(td, data, datalen);
+        mhash_hmac_deinit(td, mac);</pre>
+<pre>
+ /* 
+  * The output should be 0x750c783e6ab0b503eaa86e310a5db738
+  * according to RFC 2104.
+  */</pre>
+<pre>
+        printf(&quot;0x&quot;);
+        for (j = 0; j &lt; mhash_get_block_size(MHASH_MD5); j++) {
+                printf(&quot;%.2x&quot;, mac[j]);
+        }
+        printf(&quot;\n&quot;);
+        
+        exit(0);
+ }</pre>
+<p>
+</p>
+<hr />
+<h1><a name="history">HISTORY</a></h1>
+<p>This library was originally written by <em>Nikos Mavroyanopoulos</em>
+&lt;<a href="mailto:nmav@hellug.gr">nmav@hellug.gr</a>&gt; who passed the project over to <em>Sascha Schumann</em>
+&lt;<a href="mailto:sascha@schumann.cx">sascha@schumann.cx</a>&gt; in May 1999. Sascha maintained it until March 2000.
+The library is now maintained by <em>Nikos Mavroyanopoulos</em>.</p>
+<p>
+</p>
+<hr />
+<h1><a name="bugs">BUGS</a></h1>
+<p>If you find any, please send a bug report (preferrably together with a patch)
+to the maintainer with a detailed description on how to reproduce the bug.</p>
+<p>
+</p>
+<hr />
+<h1><a name="authors">AUTHORS</a></h1>
+<p>Sascha Schumann &lt;<a href="mailto:sascha@schumann.cx">sascha@schumann.cx</a>&gt;
+Nikos Mavroyanopoulos &lt;<a href="mailto:nmav@hellug.gr">nmav@hellug.gr</a>&gt;</p>
+
+</body>
+
+</html>
