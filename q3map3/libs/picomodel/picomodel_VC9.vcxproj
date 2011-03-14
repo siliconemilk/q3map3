@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>picomodel</ProjectName>
+    <ProjectGuid>{444E6FDA-83BD-49F1-89A4-7CF716F742A8}</ProjectGuid>
+    <RootNamespace>picomodel</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\build\$(Configuration)\libs\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\build\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\build\$(Configuration)\libs\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\build\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);Q_NO_STLPORT</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <UndefinePreprocessorDefinitions>__cplusplus;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="picointernal.c" />
+    <ClCompile Include="picomodel.c" />
+    <ClCompile Include="picomodules.c" />
+    <ClCompile Include="pm_3ds.c" />
+    <ClCompile Include="pm_ase.c" />
+    <ClCompile Include="pm_fm.c" />
+    <ClCompile Include="pm_lwo.c" />
+    <ClCompile Include="pm_md2.c" />
+    <ClCompile Include="pm_md3.c" />
+    <ClCompile Include="pm_mdc.c" />
+    <ClCompile Include="pm_ms3d.c" />
+    <ClCompile Include="pm_obj.c" />
+    <ClCompile Include="lwo\clip.c" />
+    <ClCompile Include="lwo\envelope.c" />
+    <ClCompile Include="lwo\list.c" />
+    <ClCompile Include="lwo\lwio.c" />
+    <ClCompile Include="lwo\lwo2.c" />
+    <ClCompile Include="lwo\lwob.c" />
+    <ClCompile Include="lwo\pntspols.c" />
+    <ClCompile Include="lwo\surface.c" />
+    <ClCompile Include="lwo\vecmath.c" />
+    <ClCompile Include="lwo\vmap.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lwo\lwo2.h" />
+    <ClInclude Include="picointernal.h" />
+    <ClInclude Include="..\picomodel.h" />
+    <ClInclude Include="pm_fm.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

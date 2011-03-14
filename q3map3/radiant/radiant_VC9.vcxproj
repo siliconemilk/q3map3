@@ -1,0 +1,847 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>radiant</ProjectName>
+    <ProjectGuid>{65D02375-63EE-4A8A-9F8E-504B1D5A1D02}</ProjectGuid>
+    <RootNamespace>radiant</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\install\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\build\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\install\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\build\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\mhash-0.9\lib;$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\gtk2\lib\gtk-2.0\include;$(SolutionDir)\..\gtk2\lib\gtkglext-1.0\include;$(SolutionDir)\..\gtk2\include\gtk-2.0;$(SolutionDir)\..\gtk2\include\cairo;$(SolutionDir)\..\gtk2\include\pango-1.0;$(SolutionDir)\..\gtk2\include\atk-1.0;$(SolutionDir)\..\gtk2\include\gtkglext-1.0;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>intl.lib;user32.lib;shell32.lib;gdi32.lib;comdlg32.lib;l_net.lib;cmdlib.lib;mathlib.lib;Wsock32.lib;libxml2.lib;glib-2.0.lib;gobject-2.0.lib;gdk-win32-2.0.lib;gtk-win32-2.0.lib;gtkglext-win32-1.0.lib;gdkglext-win32-1.0.lib;pango-1.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\mhash-0.9\lib;$(SolutionDir)\..\libxml2\lib;$(SolutionDir)\..\gtk2\lib;$(SolutionDir)\build\$(Configuration)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\mhash-0.9\lib;$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\gtk2\lib\gtk-2.0\include;$(SolutionDir)\..\gtk2\lib\gtkglext-1.0\include;$(SolutionDir)\..\gtk2\include\gtk-2.0;$(SolutionDir)\..\gtk2\include\cairo;$(SolutionDir)\..\gtk2\include\pango-1.0;$(SolutionDir)\..\gtk2\include\atk-1.0;$(SolutionDir)\..\gtk2\include\gtkglext-1.0;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>Q_NO_STLPORT;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);Q_NO_STLPORT</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <CompileAs>Default</CompileAs>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>intl.lib;user32.lib;shell32.lib;gdi32.lib;comdlg32.lib;l_net.lib;cmdlib.lib;mathlib.lib;Wsock32.lib;libxml2.lib;glib-2.0.lib;gobject-2.0.lib;gdk-win32-2.0.lib;gtk-win32-2.0.lib;gtkglext-win32-1.0.lib;gdkglext-win32-1.0.lib;pango-1.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\mhash-0.9\lib\Release;$(SolutionDir)\..\libxml2\lib;$(SolutionDir)\..\gtk2\lib;$(SolutionDir)\build\$(Configuration)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="brush.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="camwindow.h" />
+    <ClInclude Include="dialog.h" />
+    <ClInclude Include="..\libs\libxml2\libxml\entities.h" />
+    <ClInclude Include="epairswrapper.h" />
+    <ClInclude Include="feedback.h" />
+    <ClInclude Include="file.h" />
+    <ClInclude Include="findtexturedialog.h" />
+    <ClInclude Include="glwidget.h" />
+    <ClInclude Include="glwindow.h" />
+    <ClInclude Include="mainframe.h" />
+    <ClInclude Include="map.h" />
+    <ClInclude Include="mathlib.h" />
+    <ClInclude Include="messaging.h" />
+    <ClInclude Include="parse.h" />
+    <ClInclude Include="patchdialog.h" />
+    <ClInclude Include="plugin.h" />
+    <ClInclude Include="pluginmanager.h" />
+    <ClInclude Include="points.h" />
+    <ClInclude Include="preferences.h" />
+    <ClInclude Include="preferencesystem.h" />
+    <ClInclude Include="qe3.h" />
+    <ClInclude Include="qedefs.h" />
+    <ClInclude Include="qfiles.h" />
+    <ClInclude Include="qgl.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="select.h" />
+    <ClInclude Include="shaders.h" />
+    <ClInclude Include="surfacedialog.h" />
+    <ClInclude Include="texmanip.h" />
+    <ClInclude Include="textures.h" />
+    <ClInclude Include="texwindow.h" />
+    <ClInclude Include="..\libs\libxml2\libxml\tree.h" />
+    <ClInclude Include="ui.h" />
+    <ClInclude Include="undo.h" />
+    <ClInclude Include="unzip.h" />
+    <ClInclude Include="..\libs\libxml2\libxml\valid.h" />
+    <ClInclude Include="..\include\version.h" />
+    <ClInclude Include="watchbsp.h" />
+    <ClInclude Include="winding.h" />
+    <ClInclude Include="xmlstuff.h" />
+    <ClInclude Include="xy.h" />
+    <ClInclude Include="xywindow.h" />
+    <ClInclude Include="z.h" />
+    <ClInclude Include="zwindow.h" />
+    <ClInclude Include="..\include\ibrush.h" />
+    <ClInclude Include="..\include\ibspfrontend.h" />
+    <ClInclude Include="..\include\icamera.h" />
+    <ClInclude Include="..\include\idata.h" />
+    <ClInclude Include="..\include\idatastream.h" />
+    <ClInclude Include="..\include\ieclass.h" />
+    <ClInclude Include="..\include\ientity.h" />
+    <ClInclude Include="..\include\iepairs.h" />
+    <ClInclude Include="..\include\ifilesystem.h" />
+    <ClInclude Include="..\include\igl.h" />
+    <ClInclude Include="..\include\iimage.h" />
+    <ClInclude Include="..\include\imap.h" />
+    <ClInclude Include="..\include\imodel.h" />
+    <ClInclude Include="..\include\iplugin.h" />
+    <ClInclude Include="..\include\ipluginentities.h" />
+    <ClInclude Include="..\include\irefcount.h" />
+    <ClInclude Include="..\include\iscriplib.h" />
+    <ClInclude Include="..\include\iselectedface.h" />
+    <ClInclude Include="..\include\ishaders.h" />
+    <ClInclude Include="..\include\ishadersmanager.h" />
+    <ClInclude Include="..\include\istream.h" />
+    <ClInclude Include="..\include\isurfaceplugin.h" />
+    <ClInclude Include="..\include\itoolbar.h" />
+    <ClInclude Include="..\include\iUI.h" />
+    <ClInclude Include="..\include\iUI_gtk.h" />
+    <ClInclude Include="..\include\iundo.h" />
+    <ClInclude Include="..\include\misc_def.h" />
+    <ClInclude Include="..\include\qerplugin.h" />
+    <ClInclude Include="..\include\qertypes.h" />
+    <ClInclude Include="..\include\qsysprintf.h" />
+    <ClInclude Include="..\..\src\glib\galloca.h" />
+    <ClInclude Include="..\..\src\glib\garray.h" />
+    <ClInclude Include="..\..\src\glib\gasyncqueue.h" />
+    <ClInclude Include="..\..\src\glib\gbacktrace.h" />
+    <ClInclude Include="..\..\src\glib\gcache.h" />
+    <ClInclude Include="..\..\src\glib\gcompat.h" />
+    <ClInclude Include="..\..\src\glib\gcompletion.h" />
+    <ClInclude Include="..\..\src\glib\gconvert.h" />
+    <ClInclude Include="..\..\src\glib\gdataset.h" />
+    <ClInclude Include="..\..\src\glib\gdate.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdk.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcc.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcolor.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcompat.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkconfig.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcursor.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcursors.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkdnd.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkdrawable.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkevents.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkfont.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkgc.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkim.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkimage.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkinput.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkkeysyms.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkpixmap.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\win32\gdkprivate-win32.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkprivate.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkproperty.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkregion.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkrgb.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkselection.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdktypes.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkvisual.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\win32\gdkwin32.h" />
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkwindow.h" />
+    <ClInclude Include="..\..\src\glib\gerror.h" />
+    <ClInclude Include="..\..\src\glib\gfileutils.h" />
+    <ClInclude Include="..\..\src\glib\ghash.h" />
+    <ClInclude Include="..\..\src\glib\ghook.h" />
+    <ClInclude Include="..\..\src\glib\giochannel.h" />
+    <ClInclude Include="..\..\src\glib\glib.h" />
+    <ClInclude Include="..\..\src\glib\glibconfig.h" />
+    <ClInclude Include="..\..\src\glib\glist.h" />
+    <ClInclude Include="..\..\src\glib\gmacros.h" />
+    <ClInclude Include="..\..\src\glib\gmain.h" />
+    <ClInclude Include="..\..\src\glib\gmarkup.h" />
+    <ClInclude Include="..\..\src\glib\gmem.h" />
+    <ClInclude Include="..\..\src\glib\gmessages.h" />
+    <ClInclude Include="..\..\src\glib\gnode.h" />
+    <ClInclude Include="..\..\src\glib\gprimes.h" />
+    <ClInclude Include="..\..\src\glib\gqsort.h" />
+    <ClInclude Include="..\..\src\glib\gquark.h" />
+    <ClInclude Include="..\..\src\glib\gqueue.h" />
+    <ClInclude Include="..\..\src\glib\grand.h" />
+    <ClInclude Include="..\..\src\glib\grel.h" />
+    <ClInclude Include="groupdialog.h" />
+    <ClInclude Include="..\..\src\glib\gscanner.h" />
+    <ClInclude Include="..\..\src\glib\gshell.h" />
+    <ClInclude Include="..\..\src\glib\gslist.h" />
+    <ClInclude Include="..\..\src\glib\gspawn.h" />
+    <ClInclude Include="..\..\src\glib\gstrfuncs.h" />
+    <ClInclude Include="..\..\src\glib\gstring.h" />
+    <ClInclude Include="..\..\src\glib\gthread.h" />
+    <ClInclude Include="..\..\src\glib\gthreadpool.h" />
+    <ClInclude Include="..\..\src\glib\gtimer.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtk.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkaccelgroup.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkaccellabel.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkadjustment.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkalignment.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkarg.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkarrow.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkaspectframe.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbbox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbin.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbindings.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbutton.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcalendar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcheckbutton.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcheckmenuitem.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkclist.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcolorsel.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcombo.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcompat.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcontainer.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkctree.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcurve.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdata.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdebug.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdialog.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdnd.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdrawingarea.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkeditable.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkentry.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkenums.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkeventbox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkfilesel.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkfixed.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkfontsel.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkframe.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkgamma.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkgc.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhandlebox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhbbox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhbox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhpaned.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhruler.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhscale.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhscrollbar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhseparator.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkimage.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkinputdialog.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkitem.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkitemfactory.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklabel.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklayout.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklist.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklistitem.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmain.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmarshal.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenu.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenubar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenufactory.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenuitem.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenushell.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmisc.h" />
+    <ClInclude Include="gtkmisc.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtknotebook.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkobject.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkoptionmenu.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpacker.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpaned.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpixmap.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkplug.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpreview.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkprogress.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkprogressbar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkradiobutton.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkradiomenuitem.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkrange.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkrc.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkruler.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkscale.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkscrollbar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkscrolledwindow.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkselection.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkseparator.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtksignal.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtksocket.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkspinbutton.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkstatusbar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkstyle.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktable.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktearoffmenuitem.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktext.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkthemes.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktipsquery.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktogglebutton.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktoolbar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktooltips.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktree.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktreeitem.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktypebuiltins.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktypeutils.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvbbox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvbox.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkviewport.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvpaned.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvruler.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvscale.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvscrollbar.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvseparator.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkwidget.h" />
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkwindow.h" />
+    <ClInclude Include="..\..\src\glib\gtree.h" />
+    <ClInclude Include="..\..\src\glib\gtypes.h" />
+    <ClInclude Include="..\..\src\glib\gunicode.h" />
+    <ClInclude Include="..\..\src\glib\gutils.h" />
+    <ClInclude Include="..\..\src\glib\gwin32.h" />
+    <ClInclude Include="..\libs\cmdlib.h" />
+    <ClInclude Include="..\libs\jpeg6\Jconfig.h" />
+    <ClInclude Include="..\libs\jpeg6\Jmorecfg.h" />
+    <ClInclude Include="..\libs\jpeglib.h" />
+    <ClInclude Include="..\libs\l_net\l_net.h" />
+    <ClInclude Include="..\libs\missing.h" />
+    <ClInclude Include="..\libs\str.h" />
+    <ClInclude Include="..\libs\xmlio.h" />
+    <ClInclude Include="..\libs\xmlparser.h" />
+    <ClInclude Include="..\libs\libxml2\libxml\xmlversion.h" />
+    <ClInclude Include="..\libs\xmlwriter.h" />
+    <ClInclude Include="..\include\gtkr_list.h" />
+    <ClInclude Include="..\include\gtkr_vector.h" />
+    <ClInclude Include="..\include\stl_check.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bp_dlg.cpp" />
+    <ClCompile Include="brush.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="brush_primit.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="brushscript.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="camwindow.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="csg.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="dialog.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="dialoginfo.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="drag.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="eclass.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="eclass_def.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="file.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="filters.cpp" />
+    <ClCompile Include="findtexturedialog.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="glinterface.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="glwidget.cpp" />
+    <ClCompile Include="glwindow.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="groupdialog.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="gtkdlgs.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="gtkmisc.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="mainframe.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="missing.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="parse.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="patchdialog.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="pluginentities.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="pluginmanager.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="pmesh.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="points.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="preferences.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="profile.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="qe3.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="qgl.c" />
+    <ClCompile Include="qgl_ext.cpp" />
+    <ClCompile Include="select.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="selectedface.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="surfacedialog.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="surfaceplugin.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="targetname.cpp" />
+    <ClCompile Include="texmanip.cpp" />
+    <ClCompile Include="texwindow.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="ui.cpp" />
+    <ClCompile Include="undo.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="vertsel.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="winding.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="xywindow.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="z.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="zwindow.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="feedback.cpp" />
+    <ClCompile Include="watchbsp.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\gtk+\gdk\makefile.msc" />
+    <None Include="..\..\src\gtk+\gdk\win32\makefile.msc" />
+    <None Include="..\..\src\gtk+\gtk\makefile.msc" />
+    <None Include="..\..\src\glib\makefile.msc" />
+    <None Include="..\setup\changelog.txt" />
+    <None Include="..\docs\developer\CHANGES" />
+    <None Include="..\COMPILING" />
+    <None Include="radiant.ico" />
+    <None Include="..\win32_install.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="radiant.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libs\cmdlib\cmdlib_VC9.vcxproj">
+      <Project>{0b522841-bdcc-493a-ba5c-604ae2cd5756}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\ddslib\ddslib_VC9.vcxproj">
+      <Project>{5dcc8086-830e-42e6-b080-5a287f8ff5dc}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\l_net\l_net_VC9.vcxproj">
+      <Project>{3886c418-a41e-4aff-bbd1-8e1e508920c9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\mathlib\mathlib_VC9.vcxproj">
+      <Project>{320cf5de-0dfd-4c3f-b558-5f4098e111c8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\md5lib\md5lib_VC9.vcxproj">
+      <Project>{dc2f2b6b-2596-4b90-88ce-2fde4c2ffb01}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\picomodel\picomodel_VC9.vcxproj">
+      <Project>{444e6fda-83bd-49f1-89a4-7cf716f742a8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\synapse\synapse_VC9.vcxproj">
+      <Project>{e13ccfb0-a366-4ef3-a66f-c374b563e4df}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

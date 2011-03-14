@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4d44de8a-9349-402c-bedb-d8b6459c1bc9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{21605da0-a85c-48bf-a345-c22424c247f8}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\API">
+      <UniqueIdentifier>{842767fe-f8e3-42f5-a7ea-2e0347d323aa}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f5542a4d-4c58-49e0-a95a-bfcc0829b360}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="map.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Conscript" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="parse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="write.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ifilesystem.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ipatch.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\iscriplib.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\qerplugin.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\qertypes.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

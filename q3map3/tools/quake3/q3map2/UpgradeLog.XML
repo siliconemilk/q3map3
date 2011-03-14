@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="q3map2_VC9">
+</Property><Property Name="Solution File" Value="E:\Users\Ryoko\Documents\Visual Studio 2008\Projects\q3map3\q3map3\tools\quake3\q3map2\q3map2_VC9.sln">
+</Property><Property Name="Date" Value="Sunday, March 13, 2011">
+</Property><Property Name="Time" Value="18:43:32 PM">
+</Property></Properties><Event ErrorLevel="0" Project="q3map2_VC9" Source="q3map2_VC9.vcproj" Description="Converting project file 'E:\Users\Ryoko\Documents\Visual Studio 2008\Projects\q3map3\q3map3\tools\quake3\q3map2\q3map2_VC9.vcproj'.">
+</Event><Event ErrorLevel="1" Project="q3map2_VC9" Source="q3map2_VC9.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="q3map2_VC9" Source="q3map2_VC9.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="q3map2_VC9" Source="q3map2_VC9.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="q3map2_VC9" Source="q3map2_VC9.vcproj" Description="Done converting to new project file 'E:\Users\Ryoko\Documents\Visual Studio 2008\Projects\q3map3\q3map3\tools\quake3\q3map2\q3map2_VC9.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="q3map2_VC9" Source="q3map2_VC9.vcproj" Description="Converted">
+</Event></UpgradeLog>

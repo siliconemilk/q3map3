@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{55df0503-b3b0-47fd-8ab9-6da0efc1b3ca}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{22f4e4c1-6aa7-4b34-837d-b8dba1373530}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\API">
+      <UniqueIdentifier>{3eb87151-526c-49a9-9ee2-93f064065c10}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{0fc5357f-61e5-4d24-bd97-0e3b3acd52f4}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mapxml.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Conscript" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlparse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlwrite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ifilesystem.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ipatch.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\iscriplib.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\qerplugin.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\qertypes.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

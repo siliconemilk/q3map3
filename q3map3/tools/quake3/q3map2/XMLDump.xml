@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<q3map_feedback><message level="1">Q3Map         - v1.0r (c) 1999 Id Software Inc.
+</message><message level="1">Q3Map (ydnar) - v2.5.17
+</message><message level="1">Q3Map (silicone_milk) -v2.9.01
+</message><message level="1">GtkRadiant    - v1.6.0 Aug 30 2010 19:20:57
+</message><message level="1">Come Git Some
+</message><message level="0">--- InitPaths ---
+</message><message level="0">Searching for "quake" in "c:/Users/Ryoko/Documents/Visual Studio 2008/Projects/q3map3/q3map3/install/debug/q3map2.exe" (0)...
+</message><message level="0">Searching for "quake" in "-light" (1)...
+</message><message level="0">Searching for "quake" in "this" (2)...
+</message><message level="1">VFS Init: ..//baseq3/
+</message><message level="1">
+WARNING: GPU will now attempt to use your videocard to accelerate compilation. This is highly experimental and can break!
+
+</message><message level="0">-&lt; ocl platform id - OK! &gt;- 
+</message><message level="0">-&lt; ocl device id - OK! &gt;- 
+</message><message level="0">-&lt; ocl context created - OK! &gt;- 
+</message><message level="0">-&lt; ocl command queue created - OK! &gt;- 
+
+</message><message level="1">--- Light ---
+</message><message level="0">--- Opened trace_kernel.cl successfully! ---
+</message><message level="0">    [Success On Malloc and Read]
+
+</message><message level="0">--- Opened radiosity_kernel.cl successfully! ---
+</message><message level="0">    [Success On Malloc and Read]
+
+</message><message level="1">=== ERROR === 
+ Unable to build OpenCL program. Falling back to CPU.
+Saving build log to 'ocl_build.log'.
+</message><message level="1"></message><message level="0">Map has shader script c:/Users/Ryoko/Documents/Visual Studio 2008/Projects/q3map3/q3map3/tools/quake3/q3map2/../scripts/q3map2_this.shader
+</message><message level="0">        0 shaderInfo
+</message><message level="1">Loading c:/Users/Ryoko/Documents/Visual Studio 2008/Projects/q3map3/q3map3/tools/quake3/q3map2/this.bsp
+</message><message level="1">Loading c:/Users/Ryoko/Documents/Visual Studio 2008/Projects/q3map3/q3map3/tools/quake3/q3map2/this.srf
+</message><message level="3">************ ERROR ************
+Error opening c:/Users/Ryoko/Documents/Visual Studio 2008/Projects/q3map3/q3map3/tools/quake3/q3map2/this.srf: No such file or directory
+</message></q3map_feedback>

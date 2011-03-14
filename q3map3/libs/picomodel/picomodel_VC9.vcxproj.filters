@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{bdcbca8e-aa83-400a-8f58-fe3d4694dfbe}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="src\lwo">
+      <UniqueIdentifier>{ce6c9213-487a-4fb5-95a0-85c123a1b558}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{b9fe3705-fac1-4a64-bb84-23ce6e27c5b4}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="picointernal.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="picomodel.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="picomodules.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_3ds.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_ase.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_fm.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_lwo.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_md2.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_md3.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_mdc.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_ms3d.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="pm_obj.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\clip.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\envelope.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\list.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\lwio.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\lwo2.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\lwob.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\pntspols.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\surface.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\vecmath.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+    <ClCompile Include="lwo\vmap.c">
+      <Filter>src\lwo</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lwo\lwo2.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="picointernal.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\picomodel.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="pm_fm.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

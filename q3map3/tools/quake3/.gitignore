@@ -1,0 +1,10 @@
+Debug/ 
+Release/ 
+
+*.cvsignore
+*.cvswrappers
+*.q3map1
+*.q3map2.txt
+*.log
+
+*.vcproj.*

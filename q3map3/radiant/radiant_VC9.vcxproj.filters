@@ -1,0 +1,1036 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{490c9c7b-866f-4a7b-a437-ced86418ddad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Interface">
+      <UniqueIdentifier>{51cfa5bf-a594-4841-89b6-8cfeaad0a046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\gtk">
+      <UniqueIdentifier>{4b199223-4bb0-4153-8f64-e3be098b04be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\libs">
+      <UniqueIdentifier>{cce61c82-2f90-43d2-9d36-d53cf01a3af3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\stl">
+      <UniqueIdentifier>{6ec9b882-62a0-40d3-b4a2-b2b189012465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{50844e29-6414-47d3-8546-86a7260682c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\BSP monitoring">
+      <UniqueIdentifier>{5029e71a-caaf-4346-8451-38b7e2ee3fc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdafx">
+      <UniqueIdentifier>{0feb3b80-6f6a-4864-a8ae-f689e5a3461f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{b3e3deef-643c-4fee-aad1-ef674402495c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="brush.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="camwindow.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\libxml2\libxml\entities.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="epairswrapper.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="feedback.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="findtexturedialog.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="glwidget.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="glwindow.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="mainframe.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="mathlib.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="messaging.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="parse.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="patchdialog.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="plugin.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pluginmanager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="points.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="preferences.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="preferencesystem.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="qe3.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="qedefs.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="qfiles.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="qgl.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="select.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="surfacedialog.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="texmanip.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="textures.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="texwindow.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\libxml2\libxml\tree.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ui.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="undo.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="unzip.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\libxml2\libxml\valid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\version.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="watchbsp.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="winding.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="xmlstuff.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="xy.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="xywindow.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="z.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="zwindow.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ibrush.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ibspfrontend.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\icamera.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\idata.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\idatastream.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ieclass.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ientity.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iepairs.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ifilesystem.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\igl.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iimage.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\imap.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\imodel.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iplugin.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ipluginentities.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\irefcount.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iscriplib.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iselectedface.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ishaders.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ishadersmanager.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\istream.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\isurfaceplugin.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\itoolbar.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iUI.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iUI_gtk.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\iundo.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\misc_def.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\qerplugin.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\qertypes.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\qsysprintf.h">
+      <Filter>Headers\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\galloca.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\garray.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gasyncqueue.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gbacktrace.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gcache.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gcompat.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gcompletion.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gconvert.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gdataset.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gdate.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdk.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcc.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcolor.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcompat.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkconfig.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcursor.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkcursors.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkdnd.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkdrawable.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkevents.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkfont.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkgc.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkim.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkimage.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkinput.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkkeysyms.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkpixmap.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\win32\gdkprivate-win32.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkprivate.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkproperty.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkregion.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkrgb.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkselection.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdktypes.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkvisual.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\win32\gdkwin32.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gdk\gdkwindow.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gerror.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gfileutils.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\ghash.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\ghook.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\giochannel.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\glib.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\glibconfig.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\glist.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gmacros.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gmain.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gmarkup.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gmem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gmessages.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gnode.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gprimes.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gqsort.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gquark.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gqueue.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\grand.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\grel.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="groupdialog.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gscanner.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gshell.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gslist.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gspawn.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gstrfuncs.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gstring.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gthread.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gthreadpool.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gtimer.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtk.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkaccelgroup.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkaccellabel.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkadjustment.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkalignment.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkarg.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkarrow.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkaspectframe.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbbox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbin.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbindings.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkbutton.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcalendar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcheckbutton.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcheckmenuitem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkclist.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcolorsel.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcombo.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcompat.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcontainer.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkctree.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkcurve.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdata.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdebug.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdialog.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdnd.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkdrawingarea.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkeditable.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkentry.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkenums.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkeventbox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkfilesel.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkfixed.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkfontsel.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkframe.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkgamma.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkgc.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhandlebox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhbbox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhbox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhpaned.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhruler.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhscale.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhscrollbar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkhseparator.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkimage.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkinputdialog.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkitem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkitemfactory.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklabel.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklayout.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklist.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtklistitem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmain.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmarshal.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenu.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenubar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenufactory.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenuitem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmenushell.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkmisc.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="gtkmisc.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtknotebook.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkobject.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkoptionmenu.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpacker.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpaned.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpixmap.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkplug.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkpreview.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkprogress.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkprogressbar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkradiobutton.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkradiomenuitem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkrange.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkrc.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkruler.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkscale.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkscrollbar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkscrolledwindow.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkselection.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkseparator.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtksignal.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtksocket.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkspinbutton.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkstatusbar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkstyle.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktable.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktearoffmenuitem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktext.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkthemes.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktipsquery.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktogglebutton.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktoolbar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktooltips.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktree.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktreeitem.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktypebuiltins.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtktypeutils.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvbbox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvbox.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkviewport.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvpaned.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvruler.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvscale.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvscrollbar.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkvseparator.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkwidget.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gtk+\gtk\gtkwindow.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gtree.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gtypes.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gunicode.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gutils.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\glib\gwin32.h">
+      <Filter>Headers\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\cmdlib.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\jpeg6\Jconfig.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\jpeg6\Jmorecfg.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\jpeglib.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\l_net\l_net.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\missing.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\str.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\xmlio.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\xmlparser.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\libxml2\libxml\xmlversion.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\xmlwriter.h">
+      <Filter>Headers\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtkr_list.h">
+      <Filter>Headers\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gtkr_vector.h">
+      <Filter>Headers\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stl_check.h">
+      <Filter>Headers\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Stdafx</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bp_dlg.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="brush.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="brush_primit.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="brushscript.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="camwindow.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="csg.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="dialoginfo.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="drag.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="eclass.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="eclass_def.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="error.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="file.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="filters.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="findtexturedialog.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="glinterface.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="glwidget.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="glwindow.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="groupdialog.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="gtkdlgs.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="gtkmisc.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="mainframe.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="missing.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="parse.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="patchdialog.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="pluginentities.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="pluginmanager.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="pmesh.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="points.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="preferences.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="profile.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="qe3.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="qgl.c">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="qgl_ext.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="select.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="selectedface.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="surfacedialog.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="surfaceplugin.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="targetname.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="texmanip.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="texwindow.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="ui.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="undo.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="vertsel.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="winding.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="xywindow.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="z.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="zwindow.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="feedback.cpp">
+      <Filter>Code\BSP monitoring</Filter>
+    </ClCompile>
+    <ClCompile Include="watchbsp.cpp">
+      <Filter>Code\BSP monitoring</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Stdafx</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\gtk+\gdk\makefile.msc">
+      <Filter>Misc</Filter>
+    </None>
+    <None Include="..\..\src\gtk+\gdk\win32\makefile.msc">
+      <Filter>Misc</Filter>
+    </None>
+    <None Include="..\..\src\gtk+\gtk\makefile.msc">
+      <Filter>Misc</Filter>
+    </None>
+    <None Include="..\..\src\glib\makefile.msc">
+      <Filter>Misc</Filter>
+    </None>
+    <None Include="..\setup\changelog.txt" />
+    <None Include="..\docs\developer\CHANGES" />
+    <None Include="..\COMPILING" />
+    <None Include="radiant.ico" />
+    <None Include="..\win32_install.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="radiant.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>q3map2</ProjectName>
+    <ProjectGuid>{F5D0509C-80E0-49B7-B033-885D8253063A}</ProjectGuid>
+    <RootNamespace>q3map2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\install\debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\install\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\mhash-0.9\lib;$(SolutionDir)\..\jpeg-6b;$(SolutionDir)\tools\quake3\common;$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OpenCL.lib;libmhash.lib;md5lib.lib;ddslib.lib;l_net.lib;mathlib.lib;picomodel.lib;libjpeg.lib;libxml2.lib;libpng.lib;glib-2.0.lib;gobject-2.0.lib;Wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\mhash-0.9\win32\libmhash\debug;$(SolutionDir)\..\jpeg-6b;$(SolutionDir)\..\libxml2\lib;$(SolutionDir)\..\gtk2\lib;$(SolutionDir)\build\$(Configuration)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>2097152</StackReserveSize>
+      <StackCommitSize>2097152</StackCommitSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\mhash-0.9\lib;$(SolutionDir)\..\jpeg-6b;$(SolutionDir)\tools\quake3\common;$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);Q_NO_STLPORT</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OpenCL.lib;libmhash.lib;md5lib.lib;ddslib.lib;l_net.lib;mathlib.lib;picomodel.lib;libjpeg.lib;libxml2.lib;libpng.lib;glib-2.0.lib;gobject-2.0.lib;Wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\mhash-0.9\win32\libmhash\Release;$(SolutionDir)\..\jpeg-6b;$(SolutionDir)\..\libxml2\lib;$(SolutionDir)\..\gtk2\lib;$(SolutionDir)\build\$(Configuration)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>2097152</StackReserveSize>
+      <StackCommitSize>2097152</StackCommitSize>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bspfile_abstract.c" />
+    <ClCompile Include="bspfile_ibsp.c" />
+    <ClCompile Include="bspfile_rbsp.c" />
+    <ClCompile Include="image.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="mesh.c" />
+    <ClCompile Include="model.c" />
+    <ClCompile Include="path_init.c" />
+    <ClCompile Include="shaders.c" />
+    <ClCompile Include="surface_extra.c" />
+    <ClCompile Include="..\common\cmdlib.c" />
+    <ClCompile Include="..\common\imagelib.c" />
+    <ClCompile Include="..\common\inout.c" />
+    <ClCompile Include="..\common\jpeg.c" />
+    <ClCompile Include="..\common\mutex.c" />
+    <ClCompile Include="..\common\polylib.c" />
+    <ClCompile Include="q3map3_cl.c" />
+    <ClCompile Include="..\common\scriplib.c" />
+    <ClCompile Include="..\common\threads.c" />
+    <ClCompile Include="..\common\unzip.c" />
+    <ClCompile Include="..\common\vfs.c">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\include;$(SolutionDir)\libs;$(SolutionDir)\..\STLPort\stlport;$(SolutionDir)\..\gtk2\include;$(SolutionDir)\..\gtk2\include\glib-2.0;$(SolutionDir)\..\gtk2\lib\glib-2.0\include;$(SolutionDir)\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="brush.c" />
+    <ClCompile Include="brush_primit.c" />
+    <ClCompile Include="bsp.c" />
+    <ClCompile Include="decals.c" />
+    <ClCompile Include="facebsp.c" />
+    <ClCompile Include="fog.c" />
+    <ClCompile Include="leakfile.c" />
+    <ClCompile Include="map.c" />
+    <ClCompile Include="patch.c" />
+    <ClCompile Include="portals.c" />
+    <ClCompile Include="prtfile.c" />
+    <ClCompile Include="surface.c" />
+    <ClCompile Include="surface_foliage.c" />
+    <ClCompile Include="surface_fur.c" />
+    <ClCompile Include="surface_meta.c" />
+    <ClCompile Include="tjunction.c" />
+    <ClCompile Include="tree.c" />
+    <ClCompile Include="writebsp.c" />
+    <ClCompile Include="light.c" />
+    <ClCompile Include="light_bounce.c" />
+    <ClCompile Include="light_trace.c" />
+    <ClCompile Include="light_ydnar.c" />
+    <ClCompile Include="lightmaps_ydnar.c" />
+    <ClCompile Include="vis.c" />
+    <ClCompile Include="visflow.c" />
+    <ClCompile Include="convert_ase.c" />
+    <ClCompile Include="convert_map.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game_ef.h" />
+    <ClInclude Include="game_ja.h" />
+    <ClInclude Include="game_jk2.h" />
+    <ClInclude Include="game_quake3.h" />
+    <ClInclude Include="game_sof2.h" />
+    <ClInclude Include="game_wolf.h" />
+    <ClInclude Include="game_wolfet.h" />
+    <ClInclude Include="q3map2.h" />
+    <ClInclude Include="q3map3_cl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="changelog.q3map2.txt" />
+    <None Include="q3map2.ico" />
+    <None Include="radiosity_kernel.cl" />
+    <None Include="trace_kernel.cl" />
+    <None Include="vector_math.cl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="q3map2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libs\md5lib\md5lib_VC9.vcxproj">
+      <Project>{dc2f2b6b-2596-4b90-88ce-2fde4c2ffb01}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\libs\picomodel\picomodel_VC9.vcxproj">
+      <Project>{444e6fda-83bd-49f1-89a4-7cf716f742a8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

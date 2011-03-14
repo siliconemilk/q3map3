@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{d98158e0-62e3-412b-9537-61322174805d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8221c6af-25a9-4210-8faf-95798b8fa6ef}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\API">
+      <UniqueIdentifier>{47e46acf-df01-4864-b310-9544837571b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{6e83d954-0ab0-4094-921c-66c12d6005d0}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="eclassmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_entitymodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="miscmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="entity.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Conscript" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entity_entitymodel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ifilesystem.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\igl.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\imodel.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ishaders.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\isurface.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\qerplugin.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\qertypes.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
